@@ -1,6 +1,6 @@
 <?php
 session_start();
-require dirname(__FILE__, 0) . 'getUsersData.php';
+require __DIR__ . '/getUsersData.php';
 $username = $_SESSION['username'];
 $user_bdd_name = "";
 $user_bdd_username = "";
@@ -41,12 +41,12 @@ if (isset($username)) {
 
 # récupération de la taille du dossier utilisateur
 if(!empty($username_folder) && !empty($www))  {
-$dossier_utilisateur = shell_exec("./info_conso_site.sh $username_folder $www");
+$dossier_utilisateur = shell_exec("../script/info_conso_site.sh $username_folder $www");
     $userSiteSize = $dossier_utilisateur;
 }
 # récupération de la taille de la base de données utilisateur
 if(!empty($user_bdd_username) && !empty($user_bdd_name) && !empty($user_bdd_password))  {
-    $db_utilisateur = shell_exec("./info_conso_bdd.sh $user_bdd_username $user_bdd_name $user_bdd_password");
+    $db_utilisateur = shell_exec("../script/info_conso_bdd.sh $user_bdd_username $user_bdd_name $user_bdd_password");
     $userBddSize = $db_utilisateur." MB";
 }
 

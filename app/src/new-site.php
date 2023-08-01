@@ -16,10 +16,10 @@ $password = $userData['pwd'];
 $ssh = $userData['ssh'];
 $username2 = $username."_2";
 
-shell_exec("./create-site.sh $username $domain");
-shell_exec("./createbdd.sh $username2 $password");
+shell_exec("../script/create-site.sh $username $domain");
+shell_exec("../script/createbdd.sh $username2 $password");
 
 $getUserData->insertNewUser($username,$password,$ssh,$domain);
 fastcgi_finish_request();
 header('Location: /');
-shell_exec("./restartNginx.sh");
+shell_exec("../script/restartNginx.sh");

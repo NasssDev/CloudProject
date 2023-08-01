@@ -1,8 +1,8 @@
 <?php
 session_start();
 $username = $_SESSION["username"];
-require_once __DIR__. '/script/getUsersData.php';
-require_once __DIR__. '/script/bonus.php';
+require_once __DIR__ . '/src/getUsersData.php';
+require_once __DIR__ . '/src/bonus.php';
 $cpuLoadVar = cpuLoad();
 
 $hddVar = spaceUsed($username);
@@ -50,7 +50,7 @@ $domains = $getUserData->getDomainsByUserName($username);
                           echo '<p class="my-2 text-info text-center fw-bold">Cliquez sur le ou les site(s) web pour obtenir vos données de consommations.</p>';
                           foreach($domains as $domain): ?>
                               <div class="list-group">
-                                  <a href="script/infoConsoSite.php?domain=<?php echo urlencode($domain) ?>" class="my-1 list-group-item list-group-item-action bg-success text-white fw-bold border border-0">
+                                  <a href="src/infoConsoSite.php?domain=<?php echo urlencode($domain) ?>" class="my-1 list-group-item list-group-item-action bg-success text-white fw-bold border border-0">
                                       <?= $domain ?>
                                   </a>
                               </div>

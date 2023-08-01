@@ -36,7 +36,7 @@
                 <p class="warning-statement"> Vous êtes connecté </p>
             <?php } ?>
         </div>
-		<form class="card-form" action="../script/login-user.php" method="post">
+		<form class="card-form" action="login-user.php" method="post">
 			<div class="input">
 				<input placeholder="paul" id="username" type="text" class="input-field" name="username" required/>
 				<label for="username" class="input-label">Mon nom d'utilisateur</label>

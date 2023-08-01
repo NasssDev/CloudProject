@@ -1,7 +1,7 @@
 <?php
 session_start();
-require dirname(__FILE__, 0) . 'getUsersData.php';
-require dirname(__FILE__, 2) . '/src/connexion.php';
+require __DIR__ . '/getUsersData.php';
+require __DIR__ . '/connexion.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
 

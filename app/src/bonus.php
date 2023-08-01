@@ -35,6 +35,6 @@ function formatBytes($bytes, $precision = 2) {
 
     $bytes /= (1 << (10 * $pow));
 
-    return round($bytes, $precision) . ' ' . $units[$pow];
+    return round($bytes, $precision) . ' bonus.php' . $units[$pow];
 }
 ?>

@@ -17,7 +17,7 @@ session_start();
   <main class="sign-in-page container">
     <h1 class="text-center text-primary fw-bold fs-5">Création d'un site</h1>
       <p class="text-left text-center text-info fw-semibold fs-6">Notez que vous gardez le même espace de connexion donc le même mot de passe.</p>
-    <form method="post" action="../script/new-site.php">
+    <form method="post" action="new-site.php">
       <div class="mb-3">
         <label for="domainName" class="form-label">Nom de domaine du nouveau site:</label>
         <div><input type="text" id="domainName" name="domainName" aria-describedby="domainName" required><span>-groupe16.fr</span></div>

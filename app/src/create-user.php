@@ -11,11 +11,11 @@ $file = fopen("temp_authkey_$username", "w");
 fwrite($file, $ssh);
 fclose($file);
 
-shell_exec("./createuser.sh $username $password $domain $ssh");
+shell_exec("../script/createuser.sh $username $password $domain $ssh");
 
-shell_exec("./rightown.sh $username");
+shell_exec("../script/rightown.sh $username");
 
-shell_exec("./createbdd.sh $username $password");
+shell_exec("../script/createbdd.sh $username $password");
 
 $mysqli = new mysqli("localhost","groupe16","","groupe16");
 
@@ -36,5 +36,5 @@ if ($mysqli->errno) {
 $mysqli->close();
 
 fastcgi_finish_request();
-shell_exec("./restartNginx.sh");
+shell_exec("../script/restartNginx.sh");
 header('Location: /');
